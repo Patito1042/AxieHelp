@@ -1,0 +1,1 @@
+balance_circle = 'AgACAgIAAxkBAAN_YTz2zJl6TK_zqDjZYju5W5HUo28AAuq3MRsgQelJ604V-iGwjdsBAAMCAANzAAMgBA'
