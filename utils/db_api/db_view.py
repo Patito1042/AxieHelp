@@ -3,6 +3,8 @@ import sqlite3
 conn = sqlite3.connect('database.db')
 cursor = conn.cursor()
 
+# Получение данных польз
+
 def get_user_info(user_id):
     try:
         sql_select_query = """select * from users where userid = ?"""
