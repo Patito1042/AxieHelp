@@ -5,6 +5,8 @@ from states.calculate import *
 from aiogram.types import KeyboardButton, ReplyKeyboardMarkup
 from aiogram.dispatcher import FSMContext
 from utils import slp_take_price, get_user_info
+from utils.db_api.new_user import *
+
 
 # Функция получения клавиатуры
 def keyboards_menu(id):
@@ -20,7 +22,7 @@ def keyboards_menu(id):
 # Меню калькулятора
 @dp.message_handler(Text(startswith=f'Калькулятор'), state=None)
 async def take_number(message: Message):
-
+    user_check(message.from_user.id, message.from_user.full_name)
     await message.answer('''Что будем вычислять?''', reply_markup=keyboards_menu(message.from_user.id))
 
 # Расчитать SLP в рублях

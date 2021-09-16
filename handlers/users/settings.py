@@ -14,9 +14,8 @@ cursor = conn.cursor()
 
 @dp.message_handler(Text(equals=user_settings.text))
 async def show_settings(message: Message):
+    user_check(message.from_user.id, message.from_user.full_name)
     await message.answer(f"""Выберите настройку""", reply_markup=settings_menu)
-
-
 
 @dp.message_handler(Text(equals=currencies_btn.text))
 async def show_settings(message: Message):
